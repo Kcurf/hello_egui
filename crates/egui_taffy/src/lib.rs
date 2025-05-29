@@ -19,6 +19,12 @@ struct TaffyState {
     last_size: egui::Vec2,
 }
 
+// SAFETY: TaffyState can be safely sent between threads.
+// The *const () pointers in taffy's CompactLength are likely just type markers
+// and don't represent actual shared mutable state.
+unsafe impl Send for TaffyState {}
+unsafe impl Sync for TaffyState {}
+
 impl Clone for TaffyState {
     fn clone(&self) -> Self {
         panic!("TaffyState is not cloneable")
@@ -236,13 +242,13 @@ impl<'a, 'f> TaffyPass<'a, 'f> {
                             let available_width = match available_space.width {
                                 AvailableSpace::Definite(num) => num,
                                 AvailableSpace::MinContent => 0.0,
-                                AvailableSpace::MaxContent => f32::MAX,
+                                AvailableSpace::MaxContent => 1e6,  // Use a large but safe value
                             };
 
                             let available_height = match available_space.height {
                                 AvailableSpace::Definite(num) => num,
                                 AvailableSpace::MinContent => 0.0,
-                                AvailableSpace::MaxContent => f32::MAX,
+                                AvailableSpace::MaxContent => 1e6,  // Use a large but safe value
                             };
 
                             let rect = egui::Rect::from_min_size(

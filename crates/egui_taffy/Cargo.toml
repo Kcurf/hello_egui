@@ -10,7 +10,7 @@ release = false
 [dependencies]
 egui.workspace = true
 
-taffy = "0.7.5"
+taffy = "0.8.1"
 
 [dev-dependencies]
 eframe = { workspace = true, default-features = true }
@@ -18,4 +18,5 @@ eframe = { workspace = true, default-features = true }
 rand.workspace = true
 
 [lints]
-workspace = true
+rust.unsafe_code = "allow" # Override workspace setting for this crate
+

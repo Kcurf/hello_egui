@@ -44,13 +44,13 @@ pub fn main() -> eframe::Result<()> {
                             display: Display::Flex,
                             flex_direction: FlexDirection::Row,
                             size: Size {
-                                width: Dimension::Percent(1.0),
-                                height: Dimension::Auto,
+                                width: Dimension::percent(1.0),
+                                height: Dimension::auto(),
                             },
 
                             gap: Size {
-                                width: LengthPercentage::Length(10.0),
-                                height: LengthPercentage::Length(10.0),
+                                width: LengthPercentage::length(10.0),
+                                height: LengthPercentage::length(10.0),
                             },
 
                             ..Default::default()
@@ -80,13 +80,13 @@ pub fn main() -> eframe::Result<()> {
                             justify_items: Some(JustifyItems::Stretch),
                             align_items: Some(AlignItems::Stretch),
                             size: Size {
-                                width: Dimension::Auto,
-                                height: Dimension::Auto,
+                                width: Dimension::auto(),
+                                height: Dimension::auto(),
                             },
 
                             gap: Size {
-                                width: LengthPercentage::Length(10.0),
-                                height: LengthPercentage::Length(10.0),
+                                width: LengthPercentage::length(10.0),
+                                height: LengthPercentage::length(10.0),
                             },
 
                             flex_grow: 0.4,
@@ -106,8 +106,8 @@ pub fn main() -> eframe::Result<()> {
                                 Style {
                                     flex_grow: 1.0,
                                     size: Size {
-                                        width: Dimension::Auto,
-                                        height: Dimension::Length(30.0),
+                                        width: Dimension::auto(),
+                                        height: Dimension::length(30.0),
                                     },
                                     ..Default::default()
                                 },
@@ -148,8 +148,8 @@ pub fn main() -> eframe::Result<()> {
                             flex_grow: 1.0,
                             align_self: Some(AlignItems::End),
                             size: Size {
-                                width: Dimension::Auto,
-                                height: Dimension::Length(100.0),
+                                width: Dimension::auto(),
+                                height: Dimension::length(100.0),
                             },
                             ..Default::default()
                         },
@@ -170,13 +170,13 @@ pub fn main() -> eframe::Result<()> {
                             flex_direction: FlexDirection::Row,
                             justify_content: Some(JustifyContent::Stretch),
                             gap: Size {
-                                width: LengthPercentage::Length(10.0),
-                                height: LengthPercentage::Length(10.0),
+                                width: LengthPercentage::length(10.0),
+                                height: LengthPercentage::length(10.0),
                             },
                             align_items: Some(AlignItems::Start),
                             size: Size {
-                                width: Dimension::Percent(1.0),
-                                height: Dimension::Auto,
+                                width: Dimension::percent(1.0),
+                                height: Dimension::auto(),
                             },
                             flex_wrap: FlexWrap::Wrap,
                             ..Default::default()
@@ -231,8 +231,8 @@ fn list_example(ui: &mut Ui) {
                 display: Display::Flex,
                 flex_direction: FlexDirection::Column,
                 size: Size {
-                    width: Dimension::Percent(1.0),
-                    height: Dimension::Auto,
+                    width: Dimension::percent(1.0),
+                    height: Dimension::auto(),
                 },
 
                 padding: Rect::length(10.0),
@@ -265,8 +265,8 @@ fn list_example(ui: &mut Ui) {
                         Id::new("icon"),
                         Style {
                             size: Size {
-                                width: Dimension::Length(40.0),
-                                height: Dimension::Length(40.0),
+                                width: Dimension::length(40.0),
+                                height: Dimension::length(40.0),
                             },
                             flex_shrink: 0.0,
                             ..Default::default()
@@ -301,8 +301,8 @@ fn list_example(ui: &mut Ui) {
                             Id::new(i),
                             Style {
                                 size: Size {
-                                    width: Dimension::Length(30.0),
-                                    height: Dimension::Length(30.0),
+                                    width: Dimension::length(30.0),
+                                    height: Dimension::length(30.0),
                                 },
                                 flex_shrink: 0.0,
                                 ..Default::default()
